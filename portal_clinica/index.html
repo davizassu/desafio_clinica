@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Clínica Digital UNICEUMA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header>
+    <h2 onclick="irPara('tela-home')" style="cursor:pointer;">UNICEUMA | Clínica Digital</h2>
+    <button onclick="irPara('tela-login')" class="btn-rosa">Entrar</button>
+  </header>
+
+  <!-- TELA 1: INÍCIO -->
+  <div id="tela-home" class="caixa">
+    <h1>Procure atendimento hoje mesmo para <span id="texto-animado">fisioterapia</span></h1>
+    <p>Atendimento com taxa social para a comunidade.</p>
+    
+    <div class="card-inicio" onclick="irPara('tela-cadastro')">
+      <h3>📄 Iniciar Pré-Cadastro Digital</h3>
+      <p>Valide seu CEP e envie seus documentos sem pegar fila.</p>
+    </div>
+  </div>
+
+  <!-- TELA 2: LOGIN -->
+  <div id="tela-login" class="caixa escondido">
+    <button onclick="irPara('tela-home')" class="btn-voltar">← Voltar</button>
+    <h2>Entrar no Portal</h2>
+    <input type="text" id="login-cpf" placeholder="Digite seu CPF (só números)">
+    <input type="date" id="login-nasc">
+    <button onclick="fazerLogin()" class="btn-rosa">Entrar</button>
+    <button onclick="irPara('tela-cadastro')" class="btn-borda">Não tenho cadastro</button>
+  </div>
+
+  <!-- TELA 3: PRÉ-CADASTRO -->
+  <div id="tela-cadastro" class="caixa escondido">
+    <button onclick="irPara('tela-home')" class="btn-voltar">← Voltar</button>
+    <h2>Pré-Cadastro do Paciente</h2>
+    
+    <input type="text" id="cad-nome" placeholder="Nome completo">
+    <input type="text" id="cad-cpf" placeholder="CPF (só números)">
+    <label>Data de Nascimento:</label>
+    <input type="date" id="cad-nasc">
+    <input type="text" id="cad-tel" placeholder="WhatsApp">
+    
+    <input type="text" id="cad-cep" placeholder="CEP (8 números)" onblur="buscarCep()">
+    <input type="text" id="cad-rua" placeholder="Rua">
+    <input type="text" id="cad-bairro" placeholder="Bairro">
+
+    <label>Foto do RG:</label>
+    <input type="file" id="cad-rg">
+    
+    <label>Foto do CPF:</label>
+    <input type="file" id="cad-doc-cpf">
+
+    <button onclick="fazerCadastro()" class="btn-rosa">Finalizar Cadastro</button>
+  </div>
+
+  <!-- TELA 4: CARTÃO DIGITAL -->
+  <div id="tela-cartao" class="caixa escondido">
+    <h2>Cartão Digital do Paciente</h2>
+    <div class="cartao">
+      <h3 id="cartao-nome">Nome</h3>
+      <p id="cartao-cpf">CPF</p>
+      
+      <!-- Gera QR Code usando uma API gratuita de imagem (bem simples) -->
+      <img id="cartao-qr" src="" alt="QR Code">
+      <p><strong id="cartao-token">TOKEN</strong></p>
+
+      <div class="aviso-faltas">
+        Faltas registradas: <span id="cartao-faltas">0</span> de 3 permitidas
+      </div>
+
+      <hr>
+      <h4>Próxima Consulta: Triagem Geral</h4>
+      <p>Status atual: <strong id="cartao-status">Agendado</strong></p>
+      <button onclick="mudarStatus('Confirmado')" class="btn-verde">Confirmar Presença</button>
+      <button onclick="mudarStatus('Cancelado')" class="btn-vermelho">Cancelar Vaga</button>
+    </div>
+    <br>
+    <button onclick="irPara('tela-home')" class="btn-borda">Sair</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

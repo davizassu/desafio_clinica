@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  color: #333;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+header h2 {
+  color: #d90452;
+  margin: 0;
+}
+
+.caixa {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.escondido {
+  display: none;
+}
+
+#texto-animado {
+  color: #d90452;
+  text-decoration: underline;
+}
+
+.card-inicio {
+  border: 2px solid #d90452;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.card-inicio:hover {
+  background-color: #fff0f5;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn-rosa { background-color: #d90452; color: white; width: 100%; }
+header .btn-rosa { width: auto; margin: 0; }
+.btn-borda { background-color: white; border: 1px solid #333; width: 100%; }
+.btn-voltar { background: none; color: #d90452; float: left; padding: 0; }
+.btn-verde { background-color: #28a745; color: white; }
+.btn-vermelho { background-color: #dc3545; color: white; }
+
+.cartao {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+
+.aviso-faltas {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 15px 0;
+}
